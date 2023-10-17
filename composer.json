@@ -1,0 +1,55 @@
+{
+    "name": "answear/fan-courier-bundle",
+    "description": "Symfony bundle for FanCourier API.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "require": {
+        "php": "8.*",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.7",
+        "psr/log": "^1.1",
+        "symfony/http-kernel": "^6.1",
+        "symfony/property-info": "^6.1",
+        "symfony/serializer": "^6.1",
+        "webmozart/assert": "^1.3"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "matthiasnoback/symfony-config-test": "^4.3",
+        "phpro/grumphp": "^1.5.0",
+        "phpstan/phpstan": "^1.4",
+        "phpstan/phpstan-webmozart-assert": "^1.2",
+        "phpunit/phpunit": "10.4.*",
+        "roave/security-advisories": "dev-master",
+        "symfony/phpunit-bridge": "6.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Answear\\FanCourier\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Answear\\FanCourier\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "GrumPHP\\Composer\\DevelopmentIntegrator::integrate"
+        ],
+        "post-update-cmd": [
+            "GrumPHP\\Composer\\DevelopmentIntegrator::integrate"
+        ]
+    },
+    "extra": {
+        "grumphp": {
+            "config-default-path": "grumphp.yaml"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpro/grumphp": true
+        }
+    }
+}
