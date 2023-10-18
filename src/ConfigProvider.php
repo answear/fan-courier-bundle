@@ -2,8 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Answear\FanCourier;
+namespace Answear\FanCourierBundle;
 
 class ConfigProvider
 {
+    public function __construct(
+        public readonly string $clientId,
+        public readonly string $username,
+        public readonly string $password,
+        public readonly string $apiUrl,
+    ) {
+    }
 }
