@@ -10,7 +10,5 @@ interface RequestInterface
 
     public function getMethod(): string;
 
-    public function getUrlQuery(): ?string;
-
-    public function getHeaders(): array;
+    public function getOptions(): array;
 }

@@ -1,0 +1,59 @@
+[
+    {
+        "Id": "FAN0039",
+        "Name": "FANbox Kaufland Theodor Pallady",
+        "RoutingLocation": "FANbox Kaufland Theodor Pallady (Locker)",
+        "Description": "In dreapta intrarii principale",
+        "County": "Bucuresti",
+        "Locality": "Bucuresti",
+        "Address": "Bd. Theodor Pallady, Nr. 51",
+        "ZipCode": "32258",
+        "LocationReference": "In dreapta intrarii principale",
+        "Latitude": 44.40874,
+        "Longitude": 26.19726,
+        "Schedule": [
+            {
+                "startHour": "00: 00",
+                "stopHour": "23:59"
+            },
+            {
+                "startHour": "00: 00",
+                "stopHour": "23: 59"
+            },
+            {
+                "startHour": "00: 00",
+                "stopHour": "23: 59"
+            },
+            {
+                "startHour": "00:00",
+                "stopHour": "23: 59"
+            },
+            {
+                "startHour": "00: 00",
+                "stopHour": "23: 59"
+            },
+            {
+                "startHour": "00: 00",
+                "stopHour": "23:59"
+            },
+            {
+                "startHour": "00: 00",
+                "stopHour": "23: 59"
+            }
+        ],
+        "Drawer": [
+            {
+                "number": 6,
+                "type": "L"
+            },
+            {
+                "number": 3,
+                "type": "M"
+            },
+            {
+                "number": 17,
+                "type": "S"
+            }
+        ]
+    }
+]
