@@ -9,4 +9,4 @@ services:
     Answear\FanCourierBundle\Logger\FanCourierLogger:
         shared: false
 
-    Answear\BoxNowBundle\Client\RequestTransformerInterface: '@Answear\BoxNowBundle\Client\RequestTransformer'
+    Answear\FanCourierBundle\Client\RequestTransformerInterface: '@Answear\FanCourierBundle\Client\RequestTransformer'
