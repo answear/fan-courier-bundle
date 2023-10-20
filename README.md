@@ -8,15 +8,24 @@ Documentation of the API can be found here: https://github.com/FAN-Courier/API-D
 * install with Composer
 
 ```
-composer require git@github.com:answear/fan-courier-bundle.git
+composer require answear/fan-courier-bundle
 ```
 
-`Answear\FanCourier\AnswearFanCourier::class => ['all' => true],`  
+`Answear\FanCourierBundle\AnswearFanCourier::class => ['all' => true],`  
 should be added automatically to your `config/bundles.php` file by Symfony Flex.
 
 ## Setup
 
-todo
+```yaml
+# config/packages/answear_fancourier.yaml
+answear_fan_courier:
+    clientId: yourClientId
+    username: yourUsername
+    password: yourPassword
+    apiUrl: apiUrl
+    logger: customLogger #default: null
+```
+Logger service must implement Psr\Log\LoggerInterface interface.
 
 ## Usage
 

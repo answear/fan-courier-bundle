@@ -4,4 +4,9 @@ services:
         autoconfigure: true
         public: false
 
-    Answear\FanCourier\ConfigProvider: ~
+    Answear\FanCourierBundle\ConfigProvider: ~
+    Answear\FanCourierBundle\Client\Client: ~
+    Answear\FanCourierBundle\Logger\FanCourierLogger:
+        shared: false
+
+    Answear\FanCourierBundle\Client\RequestTransformerInterface: '@Answear\FanCourierBundle\Client\RequestTransformer'

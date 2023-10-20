@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Answear\FanCourier;
+namespace Answear\FanCourierBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

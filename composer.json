@@ -4,9 +4,9 @@
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
-        "php": "8.*",
+        "php": ">=8.1",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.7",
+        "guzzlehttp/guzzle": "^6.0 || ^7.0",
         "psr/log": "^1.1",
         "symfony/http-kernel": "^6.1",
         "symfony/property-info": "^6.1",
@@ -15,7 +15,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.4",
-        "matthiasnoback/symfony-config-test": "^4.3",
+        "matthiasnoback/symfony-config-test": "^5.0.0",
         "phpro/grumphp": "^1.5.0",
         "phpstan/phpstan": "^1.4",
         "phpstan/phpstan-webmozart-assert": "^1.2",
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Answear\\FanCourier\\": "src/"
+            "Answear\\FanCourierBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Answear\\FanCourier\\Tests\\": "tests/"
+            "Answear\\FanCourierBundle\\Tests\\": "tests/"
         }
     },
     "scripts": {
