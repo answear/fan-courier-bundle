@@ -3,6 +3,7 @@
 namespace Answear\FanCourierBundle\Client;
 
 use Answear\FanCourierBundle\Exception\RequestException;
+use Answear\FanCourierBundle\Exception\ResponseException;
 use Answear\FanCourierBundle\Logger\FanCourierLogger;
 use Answear\FanCourierBundle\Request\RequestInterface;
 use GuzzleHttp\Client as GuzzleClient;
@@ -30,7 +31,13 @@ class Client
 
             $response = $this->client->send($psrRequest);
 
+            $contents = $response->getBody()->getContents();
+
             $this->logger->logResponse($request->getEndpoint(), $psrRequest, $response);
+
+            if (str_contains($contents, 'errors')) {
+                throw new ResponseException($contents);
+            }
 
             if ($response->getBody()->isSeekable()) {
                 $response->getBody()->rewind();
