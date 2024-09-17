@@ -15,8 +15,7 @@ class Configuration implements ConfigurationInterface
 
         $treeBuilder->getRootNode()
             ->children()
-            ->scalarNode('clientId')->isRequired()->cannotBeEmpty()->end()
-            ?->scalarNode('username')->isRequired()->cannotBeEmpty()->end()
+            ->scalarNode('username')->isRequired()->cannotBeEmpty()->end()
             ?->scalarNode('password')->isRequired()->cannotBeEmpty()->end()
             ?->scalarNode('apiUrl')->isRequired()->cannotBeEmpty()->end()
             ?->scalarNode('logger')->defaultNull()->end()

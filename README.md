@@ -1,7 +1,7 @@
 # FanCourier bundle
 
 FanCourier integration for Symfony.  
-Documentation of the API can be found here: https://github.com/FAN-Courier/API-Docs
+Documentation of the API can be found here: https://www.fancourier.ro/wp-content/uploads/2023/07/EN_FANCourier_API-2.0-160523.pdf
 
 ## Installation
 
@@ -19,17 +19,42 @@ should be added automatically to your `config/bundles.php` file by Symfony Flex.
 ```yaml
 # config/packages/answear_fancourier.yaml
 answear_fan_courier:
-    clientId: yourClientId
     username: yourUsername
     password: yourPassword
     apiUrl: apiUrl
     logger: customLogger #default: null
 ```
+
 Logger service must implement Psr\Log\LoggerInterface interface.
 
 ## Usage
 
-### TODO
+### Get pickup points
+
+```php
+namespace App\Service\PickupPointsImporter;
+
+use Answear\FanCourierBundle\Service\PickupPointService;
+
+class FanCourierImport
+{
+    public function __construct(
+        private PickupPointService $pickupPointService,
+    ) {
+    }
+
+    /**
+     * @return PickupPointDTO[]
+     */
+    public function getPickupPoints(): array
+    {
+        return $this->pickupPointService->getAll();
+    }
+}
+
+```
+
+Above `getPickupPoints` method will return an array of `Answear\FanCourierBundle\DTO\PickupPointDTO` objects.
 
 Final notes
 ------------

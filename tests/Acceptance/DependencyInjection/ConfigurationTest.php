@@ -31,15 +31,14 @@ class ConfigurationTest extends TestCase
 
         $configProviderDefinition = $builder->getDefinition(ConfigProvider::class);
 
-        self::assertSame($configs[0]['clientId'], $configProviderDefinition->getArgument(0));
-        self::assertSame($configs[0]['username'], $configProviderDefinition->getArgument(1));
-        self::assertSame($configs[0]['password'], $configProviderDefinition->getArgument(2));
-        self::assertSame($configs[0]['apiUrl'], $configProviderDefinition->getArgument(3));
+        self::assertSame($configs[0]['username'], $configProviderDefinition->getArgument(0));
+        self::assertSame($configs[0]['password'], $configProviderDefinition->getArgument(1));
+        self::assertSame($configs[0]['apiUrl'], $configProviderDefinition->getArgument(2));
     }
 
     #[Test]
     #[DataProvider('provideInvalidConfig')]
-    public function invalidConfig(array $config, string $expectedMessage = null): void
+    public function invalidConfig(array $config, ?string $expectedMessage = null): void
     {
         $this->assertConfigurationIsInvalid(
             $config,
@@ -67,15 +66,6 @@ class ConfigurationTest extends TestCase
         yield [
             [
                 [],
-            ],
-            '"answear_fan_courier" must be configured.',
-        ];
-
-        yield [
-            [
-                [
-                    'clientId' => 'test',
-                ],
             ],
             '"answear_fan_courier" must be configured.',
         ];
@@ -113,7 +103,6 @@ class ConfigurationTest extends TestCase
         yield [
             [
                 [
-                    'clientId' => 'clientId',
                     'username' => 'username',
                     'password' => 'password',
                     'apiUrl' => 'apiUrl',
@@ -129,7 +118,6 @@ class ConfigurationTest extends TestCase
         yield [
             [
                 [
-                    'clientId' => 'clientId',
                     'username' => 'username',
                     'password' => 'password',
                     'apiUrl' => 'apiUrl',
@@ -140,10 +128,9 @@ class ConfigurationTest extends TestCase
         yield [
             [
                 [
-                    'clientId' => 123,
                     'username' => 'kimi',
                     'password' => 'password',
-                    'apiUrl' => 'www.softwear.co',
+                    'apiUrl' => 'api.fancourier.ro',
                 ],
             ],
         ];

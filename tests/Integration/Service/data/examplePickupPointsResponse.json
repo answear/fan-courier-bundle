@@ -1,0 +1,69 @@
+{
+    "status": "success",
+    "data": [
+        {
+            "id": "F1000005",
+            "code": "FAN0039",
+            "name": "FANbox Kaufland Theodor Pallady",
+            "routingLocation": "FANbox Kaufland Theodor Pallady (Locker)",
+            "description": "In dreapta intrarii principale",
+            "address": {
+                "locality": "Bucuresti",
+                "county": "Bucuresti",
+                "street": "Bd. Theodor Pallady",
+                "streetNo": "51",
+                "zipCode": "032258",
+                "floor": "",
+                "reference": "In dreapta intrarii principale"
+            },
+            "latitude": "44.40874",
+            "longitude": "26.19726",
+            "schedule": [
+                {
+                    "firstHour": "00:00",
+                    "secondHour": "23:59"
+                },
+                {
+                    "firstHour": "00:00",
+                    "secondHour": "23:59"
+                },
+                {
+                    "firstHour": "00:00",
+                    "secondHour": "23:59"
+                },
+                {
+                    "firstHour": "00:00",
+                    "secondHour": "23:59"
+                },
+                {
+                    "firstHour": "00:00",
+                    "secondHour": "23:59"
+                },
+                {
+                    "firstHour": "00:00",
+                    "secondHour": "23:59"
+                },
+                {
+                    "firstHour": "00:00",
+                    "secondHour": "23:59"
+                }
+            ],
+            "drawer": [
+                {
+                    "type": "L",
+                    "number": 4
+                },
+                {
+                    "type": "M",
+                    "number": 2
+                },
+                {
+                    "type": "S",
+                    "number": 9
+                }
+            ],
+            "phones": null,
+            "email": null
+        }
+    ]
+}

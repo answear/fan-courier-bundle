@@ -12,20 +12,20 @@ class ScheduleCollection
      * @param ScheduleDTO[] $schedules
      */
     public function __construct(
-        public readonly array $schedules = []
+        public readonly array $schedules = [],
     ) {
     }
 
     /**
-     * @param array<array{startHour: string, stopHour: string}> $scheduleArray
+     * @param array<array{firstHour: string, secondHour: string}> $scheduleArray
      */
     public static function fromArray(array $scheduleArray): self
     {
         $schedules = [];
         foreach ($scheduleArray as $schedule) {
-            Assert::stringNotEmpty($schedule['startHour']);
-            Assert::stringNotEmpty($schedule['stopHour']);
-            $schedules[] = new ScheduleDTO($schedule['startHour'], $schedule['stopHour']);
+            Assert::stringNotEmpty($schedule['firstHour']);
+            Assert::stringNotEmpty($schedule['secondHour']);
+            $schedules[] = new ScheduleDTO($schedule['firstHour'], $schedule['secondHour']);
         }
 
         return new self($schedules);

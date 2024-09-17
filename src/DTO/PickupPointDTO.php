@@ -10,52 +10,42 @@ class PickupPointDTO
 {
     public function __construct(
         public readonly string $id,
+        public readonly string $code,
         public readonly string $name,
         public readonly string $routingLocation,
         public readonly string $description,
-        public readonly string $county,
-        public readonly string $locality,
-        public readonly string $address,
-        public readonly string $zipCode,
-        public readonly string $locationReference,
+        public readonly AddressDTO $address,
         public readonly float $latitude,
         public readonly float $longitude,
         public readonly ScheduleCollection $schedule,
-        public readonly DrawerCollection $drawer
+        public readonly DrawerCollection $drawer,
     ) {
     }
 
     public static function fromArray(array $pickupPoint): self
     {
-        Assert::stringNotEmpty($pickupPoint['Id']);
-        Assert::stringNotEmpty($pickupPoint['Name']);
-        Assert::stringNotEmpty($pickupPoint['RoutingLocation']);
-        Assert::stringNotEmpty($pickupPoint['Description']);
-        Assert::stringNotEmpty($pickupPoint['County']);
-        Assert::stringNotEmpty($pickupPoint['Locality']);
-        Assert::stringNotEmpty($pickupPoint['Address']);
-        Assert::stringNotEmpty($pickupPoint['ZipCode']);
-        Assert::stringNotEmpty($pickupPoint['LocationReference']);
-        Assert::float($pickupPoint['Latitude']);
-        Assert::float($pickupPoint['Longitude']);
-        Assert::range($pickupPoint['Latitude'], -90, 90);
-        Assert::range($pickupPoint['Longitude'], -180, 180);
-        Assert::count($pickupPoint['Schedule'], 7);
+        Assert::stringNotEmpty($pickupPoint['id']);
+        Assert::stringNotEmpty($pickupPoint['name']);
+        Assert::stringNotEmpty($pickupPoint['routingLocation']);
+        Assert::stringNotEmpty($pickupPoint['description']);
+        Assert::notEmpty($pickupPoint['address']);
+        Assert::stringNotEmpty($pickupPoint['latitude']);
+        Assert::stringNotEmpty($pickupPoint['longitude']);
+        Assert::range((float) $pickupPoint['latitude'], -90, 90);
+        Assert::range((float) $pickupPoint['longitude'], -180, 180);
+        Assert::count($pickupPoint['schedule'], 7);
 
         return new self(
-            $pickupPoint['Id'],
-            $pickupPoint['Name'],
-            $pickupPoint['RoutingLocation'],
-            $pickupPoint['Description'],
-            $pickupPoint['County'],
-            $pickupPoint['Locality'],
-            $pickupPoint['Address'],
-            $pickupPoint['ZipCode'],
-            $pickupPoint['LocationReference'],
-            $pickupPoint['Latitude'],
-            $pickupPoint['Longitude'],
-            ScheduleCollection::fromArray($pickupPoint['Schedule']),
-            DrawerCollection::fromArray($pickupPoint['Drawer'])
+            $pickupPoint['id'],
+            $pickupPoint['code'],
+            $pickupPoint['name'],
+            $pickupPoint['routingLocation'],
+            $pickupPoint['description'],
+            AddressDTO::fromArray($pickupPoint['address']),
+            (float) $pickupPoint['latitude'],
+            (float) $pickupPoint['longitude'],
+            ScheduleCollection::fromArray($pickupPoint['schedule']),
+            DrawerCollection::fromArray($pickupPoint['drawer']),
         );
     }
 }

@@ -38,7 +38,6 @@ class AnswearFanCourierExtension extends Extension implements PrependExtensionIn
 
         $definition = $container->getDefinition(ConfigProvider::class);
         $definition->setArguments([
-            $this->config['clientId'],
             $this->config['username'],
             $this->config['password'],
             $this->config['apiUrl'],

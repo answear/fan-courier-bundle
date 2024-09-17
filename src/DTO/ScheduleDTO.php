@@ -7,8 +7,8 @@ namespace Answear\FanCourierBundle\DTO;
 class ScheduleDTO
 {
     public function __construct(
-        public readonly string $startHour,
-        public readonly string $stopHour
+        public readonly string $firstHour,
+        public readonly string $secondHour,
     ) {
     }
 }

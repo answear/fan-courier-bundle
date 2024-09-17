@@ -20,6 +20,8 @@ class PickupPointService
      */
     public function getAll(): array
     {
+        $this->client->login();
+
         $response = $this->client->request(new GetPickupPointsRequest());
 
         $pickupPointsResponse = GetPickupPointsResponse::fromArray($this->decodeResponse($response));
