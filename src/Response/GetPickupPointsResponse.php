@@ -27,9 +27,6 @@ class GetPickupPointsResponse implements ResponseInterface
             $data['data'],
         );
 
-        return new self(
-            $data['status'],
-            $pickupPoints,
-        );
+        return new self($data['status'], $pickupPoints);
     }
 }
