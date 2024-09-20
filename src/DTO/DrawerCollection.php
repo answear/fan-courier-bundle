@@ -12,12 +12,12 @@ class DrawerCollection
      * @param DrawerDTO[] $drawers
      */
     public function __construct(
-        public readonly array $drawers = []
+        public readonly array $drawers = [],
     ) {
     }
 
     /**
-     * @param array<array{number: int, type: string}> $drawerArray
+     * @param array<array{type: string, number: int}> $drawerArray
      */
     public static function fromArray(array $drawerArray): self
     {

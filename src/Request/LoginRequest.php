@@ -4,10 +4,16 @@ declare(strict_types=1);
 
 namespace Answear\FanCourierBundle\Request;
 
-class GetPickupPointsRequest implements RequestInterface
+class LoginRequest implements RequestInterface
 {
-    private const ENDPOINT = '/reports/pickup-points';
-    private const HTTP_METHOD = 'GET';
+    private const ENDPOINT = '/login';
+    private const HTTP_METHOD = 'POST';
+
+    public function __construct(
+        public readonly string $username,
+        public readonly string $password,
+    ) {
+    }
 
     public function getEndpoint(): string
     {
@@ -21,6 +27,6 @@ class GetPickupPointsRequest implements RequestInterface
 
     public function getQueryParams(): array
     {
-        return ['type' => 'fanbox'];
+        return [];
     }
 }

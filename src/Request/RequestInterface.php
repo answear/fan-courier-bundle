@@ -10,5 +10,5 @@ interface RequestInterface
 
     public function getMethod(): string;
 
-    public function getOptions(): array;
+    public function getQueryParams(): array;
 }

@@ -8,7 +8,7 @@ class DrawerDTO
 {
     public function __construct(
         public readonly int $number,
-        public readonly string $type
+        public readonly string $type,
     ) {
     }
 }

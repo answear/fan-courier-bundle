@@ -4,10 +4,11 @@ services:
         autoconfigure: true
         public: false
 
+    Answear\FanCourierBundle\:
+        resource: '../../../src/{Client,Service,RequestTransformer,Request,Serializer}'
+
     Answear\FanCourierBundle\ConfigProvider: ~
-    Answear\FanCourierBundle\Client\Client: ~
-    Answear\FanCourierBundle\Client\RequestTransformer: ~
-    Answear\FanCourierBundle\Service\PickupPointService: ~
+
     Answear\FanCourierBundle\Logger\FanCourierLogger:
         shared: false
 
