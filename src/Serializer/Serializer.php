@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Answear\FanCourierBundle\Serializer;
 
 use Answear\FanCourierBundle\Request\RequestInterface;
-use Answear\FanCourierBundle\Serializer\Normalizer\EmptyObjectNormalizer;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer;
@@ -31,7 +30,7 @@ class Serializer
         if (!isset($this->serializer)) {
             $this->serializer = new SymfonySerializer(
                 [
-                    new EmptyObjectNormalizer(),
+                    new Normalizer\CustomNormalizer(),
                     new Normalizer\PropertyNormalizer(
                         null,
                         null,
