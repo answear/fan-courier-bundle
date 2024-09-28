@@ -6,11 +6,11 @@ namespace Answear\FanCourierBundle\Response;
 
 use Webmozart\Assert\Assert;
 
-class LoginResponse implements ResponseInterface
+readonly class LoginResponse implements ResponseInterface
 {
     public function __construct(
-        public readonly string $token,
-        public readonly string $expiresAt,
+        public string $token,
+        public string $expiresAt,
     ) {
     }
 

@@ -9,12 +9,12 @@
          cacheDirectory=".phpunit.cache"
          beStrictAboutCoverageMetadata="true"
 >
-  <php>
-    <ini name="error_reporting" value="-1"/>
-  </php>
-  <testsuites>
-    <testsuite name="Answear.com FanCourier Test Suite">
-      <directory>./tests</directory>
-    </testsuite>
-  </testsuites>
+    <php>
+        <ini name="error_reporting" value="-1"/>
+    </php>
+    <testsuites>
+        <testsuite name="Answear.com FanCourier Test Suite">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>

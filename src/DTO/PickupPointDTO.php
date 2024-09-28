@@ -6,19 +6,19 @@ namespace Answear\FanCourierBundle\DTO;
 
 use Webmozart\Assert\Assert;
 
-class PickupPointDTO
+readonly class PickupPointDTO
 {
     public function __construct(
-        public readonly string $id,
-        public readonly string $code,
-        public readonly string $name,
-        public readonly string $routingLocation,
-        public readonly string $description,
-        public readonly AddressDTO $address,
-        public readonly float $latitude,
-        public readonly float $longitude,
-        public readonly ScheduleCollection $schedule,
-        public readonly DrawerCollection $drawer,
+        public string $id,
+        public string $code,
+        public string $name,
+        public string $routingLocation,
+        public string $description,
+        public AddressDTO $address,
+        public float $latitude,
+        public float $longitude,
+        public ScheduleCollection $schedule,
+        public DrawerCollection $drawer,
     ) {
     }
 
