@@ -11,10 +11,10 @@ use GuzzleHttp\Psr7\Request as HttpRequest;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface as PsrRequestInterface;
 
-class RequestTransformer implements RequestTransformerInterface
+readonly class RequestTransformer implements RequestTransformerInterface
 {
     public function __construct(
-        private readonly ConfigProvider $configProvider,
+        private ConfigProvider $configProvider,
         private Serializer $serializer,
     ) {
     }

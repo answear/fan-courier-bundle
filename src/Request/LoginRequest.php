@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Answear\FanCourierBundle\Request;
 
-class LoginRequest implements RequestInterface
+readonly class LoginRequest implements RequestInterface
 {
     private const ENDPOINT = '/login';
     private const HTTP_METHOD = 'POST';
 
     public function __construct(
-        public readonly string $username,
-        public readonly string $password,
+        public string $username,
+        public string $password,
     ) {
     }
 

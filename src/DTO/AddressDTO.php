@@ -6,16 +6,16 @@ namespace Answear\FanCourierBundle\DTO;
 
 use Webmozart\Assert\Assert;
 
-class AddressDTO
+readonly class AddressDTO
 {
     public function __construct(
-        public readonly string $locality,
-        public readonly string $county,
-        public readonly string $street,
-        public readonly string $streetNo,
-        public readonly string $zipCode,
-        public readonly string $floor,
-        public readonly string $reference,
+        public string $locality,
+        public string $county,
+        public string $street,
+        public string $streetNo,
+        public string $zipCode,
+        public string $floor,
+        public string $reference,
     ) {
     }
 

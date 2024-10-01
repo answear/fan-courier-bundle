@@ -6,13 +6,13 @@ namespace Answear\FanCourierBundle\DTO;
 
 use Webmozart\Assert\Assert;
 
-class DrawerCollection
+readonly class DrawerCollection
 {
     /**
      * @param DrawerDTO[] $drawers
      */
     public function __construct(
-        public readonly array $drawers = [],
+        public array $drawers = [],
     ) {
     }
 

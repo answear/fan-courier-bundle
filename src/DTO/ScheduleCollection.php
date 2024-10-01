@@ -6,13 +6,13 @@ namespace Answear\FanCourierBundle\DTO;
 
 use Webmozart\Assert\Assert;
 
-class ScheduleCollection
+readonly class ScheduleCollection
 {
     /**
      * @param ScheduleDTO[] $schedules
      */
     public function __construct(
-        public readonly array $schedules = [],
+        public array $schedules = [],
     ) {
     }
 

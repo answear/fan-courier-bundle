@@ -8,10 +8,10 @@ use Answear\FanCourierBundle\Request\GetPickupPointsRequest;
 use Answear\FanCourierBundle\Response\GetPickupPointsResponse;
 use Psr\Http\Message\ResponseInterface;
 
-class PickupPointService
+readonly class PickupPointService
 {
     public function __construct(
-        private readonly Client $client,
+        private Client $client,
     ) {
     }
 
