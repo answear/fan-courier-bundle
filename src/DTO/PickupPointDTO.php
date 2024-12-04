@@ -27,7 +27,6 @@ readonly class PickupPointDTO
         Assert::stringNotEmpty($pickupPoint['id']);
         Assert::stringNotEmpty($pickupPoint['name']);
         Assert::stringNotEmpty($pickupPoint['routingLocation']);
-        Assert::stringNotEmpty($pickupPoint['description']);
         Assert::notEmpty($pickupPoint['address']);
         Assert::stringNotEmpty($pickupPoint['latitude']);
         Assert::stringNotEmpty($pickupPoint['longitude']);
@@ -40,7 +39,7 @@ readonly class PickupPointDTO
             $pickupPoint['code'],
             $pickupPoint['name'],
             $pickupPoint['routingLocation'],
-            $pickupPoint['description'],
+            $pickupPoint['description'] ?? '',
             AddressDTO::fromArray($pickupPoint['address']),
             (float) $pickupPoint['latitude'],
             (float) $pickupPoint['longitude'],
