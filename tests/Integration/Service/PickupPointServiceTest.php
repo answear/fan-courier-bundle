@@ -74,28 +74,27 @@ class PickupPointServiceTest extends TestCase
 
     private function assertPoint(PickupPointDTO $pickupPoint): void
     {
-        $this->assertNotNull($pickupPoint);
-        $this->assertSame($pickupPoint->id, 'F1000005');
-        $this->assertSame($pickupPoint->code, 'FAN0039');
-        $this->assertSame($pickupPoint->name, 'FANbox Kaufland Theodor Pallady');
-        $this->assertSame($pickupPoint->routingLocation, 'FANbox Kaufland Theodor Pallady (Locker)');
-        $this->assertSame($pickupPoint->description, 'In dreapta intrarii principale');
-        $this->assertSame($pickupPoint->address->county, 'Bucuresti');
-        $this->assertSame($pickupPoint->address->locality, 'Bucuresti');
-        $this->assertSame($pickupPoint->address->street, 'Bd. Theodor Pallady');
-        $this->assertSame($pickupPoint->address->streetNo, '51');
-        $this->assertSame($pickupPoint->address->zipCode, '032258');
-        $this->assertSame($pickupPoint->address->reference, 'In dreapta intrarii principale');
-        $this->assertSame($pickupPoint->latitude, 44.40874);
-        $this->assertSame($pickupPoint->longitude, 26.19726);
+        $this->assertSame('F1000005', $pickupPoint->id);
+        $this->assertSame('FAN0039', $pickupPoint->code);
+        $this->assertSame('FANbox Kaufland Theodor Pallady', $pickupPoint->name);
+        $this->assertSame('FANbox Kaufland Theodor Pallady (Locker)', $pickupPoint->routingLocation);
+        $this->assertSame('In dreapta intrarii principale', $pickupPoint->description);
+        $this->assertSame('Bucuresti', $pickupPoint->address->county);
+        $this->assertSame('Bucuresti', $pickupPoint->address->locality);
+        $this->assertSame('Bd. Theodor Pallady', $pickupPoint->address->street);
+        $this->assertSame('51', $pickupPoint->address->streetNo);
+        $this->assertSame('032258', $pickupPoint->address->zipCode);
+        $this->assertSame('In dreapta intrarii principale', $pickupPoint->address->reference);
+        $this->assertSame(44.40874, $pickupPoint->latitude);
+        $this->assertSame(26.19726, $pickupPoint->longitude);
         $this->assertCount(7, $pickupPoint->schedule->schedules);
         $this->assertCount(3, $pickupPoint->drawer->drawers);
 
-        $this->assertSame($pickupPoint->schedule->schedules[0]->firstHour, '00:00');
-        $this->assertSame($pickupPoint->schedule->schedules[0]->secondHour, '23:59');
+        $this->assertSame('00:00', $pickupPoint->schedule->schedules[0]->firstHour);
+        $this->assertSame('23:59', $pickupPoint->schedule->schedules[0]->secondHour);
 
-        $this->assertSame($pickupPoint->drawer->drawers[0]->type, 'L');
-        $this->assertSame($pickupPoint->drawer->drawers[0]->number, 4);
+        $this->assertSame('L', $pickupPoint->drawer->drawers[0]->type);
+        $this->assertSame(4, $pickupPoint->drawer->drawers[0]->number);
     }
 
     private function getService(): PickupPointService
