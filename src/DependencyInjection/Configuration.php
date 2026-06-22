@@ -15,11 +15,11 @@ class Configuration implements ConfigurationInterface
 
         $treeBuilder->getRootNode()
             ->children()
-            ->scalarNode('username')->isRequired()->cannotBeEmpty()->end()
-            ?->scalarNode('password')->isRequired()->cannotBeEmpty()->end()
-            ?->scalarNode('apiUrl')->isRequired()->cannotBeEmpty()->end()
-            ?->scalarNode('logger')->defaultNull()->end()
-            ?->end();
+                ->scalarNode('username')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('password')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('apiUrl')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('logger')->defaultNull()->end()
+            ->end();
 
         return $treeBuilder;
     }
